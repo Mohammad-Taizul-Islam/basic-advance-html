@@ -5,7 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsive Blog Post</title>
     <style>
-        
+        body{
+            font-family: Arial,serif;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .container{
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+
+        }
+
+        header,footer{
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 15px;
+        }
+
+        @media(max-width:600px){
+            .container{
+                padding: 10px;
+            }
+        }
     </style>
   </head>
   <body>
