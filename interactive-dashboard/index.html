@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Dashboard</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .widget{
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgb(0, 0, 0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Demo Dashboard</h1>
+    </header>
+    <div class="widget">
+        <h2>Chart</h2>
+        <canvas id="chart" width="400" height="400"></canvas>
+    </div>
+
+    <div class="widget">
+        <h2>Table</h2>
+        <table>
+            <tr>Name</tr>
+            <tr>Value</tr>
+            <tr>
+                <td>Item 1</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>Item 2</td>
+                <td>200</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="widget">
+        <h2>Form</h2>
+        <form action=".submit" method="post">
+            <label for="input">Input : </label>
+            <input type="text" name="input" id="input" required>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('chart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [{
+                    label: 'Monthly Sales',
+                    data: [65, 59, 80, 81, 56, 55, 40],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
