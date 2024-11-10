@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex responsive Grid Layout </title>
+    <style>
+        .grid-container{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 16px;
+            background-color: #2108F3;
+            padding: 20px;
+            grid-template-areas: "header header header"
+            "main main sidebar"
+            "footer footer footer";
+        }
+
+        .grid-item{
+            background-color: rgba(255,255,255,0.9);
+            border: 1px solid rgb(255, 255, 0,0.8);
+            padding: 20px;
+            font-size: 18px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease
+        }
+
+        .grid-item:hover{
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        .header{
+            grid-area: header;
+            background-color: #FF5347;
+        }
+        .main{
+            grid-area: main;
+            background-color: #fffacd;
+        }
+        .sdebar{
+            grid-area: sidebar;
+            background-color: #98f898;
+        }
+
+        .footer{
+            grid-area: footer;
+            background-color: #4682B4;
+        }
+
+        @media(max-width:768px){
+            .grid-container{
+                grid-template-columns: repeat(2,1fr);
+                grid-template-areas: "header header"
+                "main sidebar"
+                "footer footer";
+            }
+        }
+
+        @media(max-width:480px){
+            .grid-container{
+                grid-template-columns: 1fr;
+                grid-template-areas: "header"
+                "main"
+                "sidebar"
+                "footer";
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Complex Responsive CSS Grid Layout</h1>
+
+    <div class="grid-container">
+        <div class="grid-item header">
+            <h2>Header</h2>
+            <p>Navigation and title go there</p>
+        </div>
+
+        <div class="grid-item main">
+            <h2>Main Content</h2>
+            <p>This is the main content area .  It takes up more space and can include text, images, or other elements. </p>
+        </div>
+
+        <div class="grid-item sidebar">
+            <h2>Sidebar</h2>
+            <p>This is sidebar , ideal for additional informations links and advertisements</p>
+        </div>
+
+        <div class="grid-item footer">
+            <h2>Footer</h2>
+            <p>Here is the footer . It spans across all columns at the bottom </p>
+        </div>
+    </div>
+</body>
+</html>
