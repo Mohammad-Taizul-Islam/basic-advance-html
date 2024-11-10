@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Flexbox layout</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+
+        }
+
+
+        header , footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .content{
+            flex: 1;
+            padding: 20px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+
+        <header>
+            <h1>Header</h1> 
+        </header>
+
+        <div class="content">
+            <p>Main content goes here</p>
+        </div>
+
+
+        <footer>
+            <p>Footer</p>
+        </footer>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Landing Page</title>
+    <style>
+        .grid-container{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            background-color: #f0f0f0;
+            padding: 20px;
+            grid-template-areas: 
+            "header header header"
+            "hero hero hero"
+            "products products products"
+            "cta cta cta"
+            "footer footer footer";
+        }
+
+        .grid-item {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            font-size: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item header">
+            <h1>ShopNow</h1>
+            <nav class="nav">
+                <a href="#">
+                    Home
+                </a>
+                <a href="#">
+                    Products
+                </a>
+                <a href="#">
+                    About
+                </a>
+                <a href="#">
+                    Contact
+                </a>
+            </nav>
+        </div>
+        <div class="grid-item hero">
+            <h2>Welcome to ShopNow</h2>
+            <p>Your one-stop shop for all your needs</p>
+            <button>ShopNow</button>
+        </div>
+
+
+        <div class="grid-item products">
+            <div class="product">
+                <img src="./assets/laptop.jpg" alt="laptop">
+                <h3>Product 1</h3>
+                <p>$29.99</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="./assets/camera.jpg" alt="camera">
+                <h3>Product 2</h3>
+                <p>$19.99</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="./assets/airphone.jpg" alt="airphone">
+                <h3>Product 3</h3>
+                <p>$34.99</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="./assets/watch.jpg" alt="watch">
+                <h3>Product 4</h3>
+                <p>$49.99</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+        <div class="grid-item cta">
+            <h2>Special Offer !</h2>
+            <p>Sign up now and get 10% off your first purch</p>
+            <button>Sign Up</button>
+        </div>
+        <div class="grid-item footer">
+            <p>&copy; 2024 shopNow. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
