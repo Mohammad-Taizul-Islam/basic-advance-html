@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery App</title>
+    <style>
+        .body{
+            margin: 0px;
+            overflow: hidden;
+        }
+        .gallery{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            overflow: hidden;
+        }
+
+        .gallery img{
+            width: calc(33.33%-10px);
+            height: auto;
+        }
+
+        @media(max-width:600px){
+            .gallery img{
+                width: calc(50%-10px);
+                overflow: hidden;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Gallery</h1>
+
+    <div class="gallery">
+        <img src="./assets/ai-human.jpg" alt="ai-human">
+        <img src="./assets//ai.avif" alt="ai">
+        <img src="./assets/drone.jpg" alt="drone">
+        <img src="./assets/drone2.jpg" alt="drone2">
+        <img src="./assets/google-home.jpg" alt="googel-home">
+        <img src="./assets/robot.jpg" alt="robot">
+        <img src="./assets/share.jpg" alt="share">
+    </div>
+</body>
+</html>

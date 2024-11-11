@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Complex Flex Layout</title>
+
+    <style>
+        body{
+            margin: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+            overflow: hidden;
+        }
+
+        .container{
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow: hidden;
+
+        }
+
+        header , footer {
+            background-color: #333;
+            color: #fff;
+            padding: 14px;
+            text-align: center;
+        }
+
+        .header-nav {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .header-nav nav a{
+            color: #fff;
+            text-decoration: none;
+            padding: 8px;
+        }
+
+        .header-nav .logo {
+            font-size: 1.5em;
+        }
+
+        .header-nav .logo img{
+            width: 40px;
+            height: 40px;
+        }
+        .header-nav nav {
+            display: flex;
+            gap: 10px;
+        }
+        .main {
+            display: flex;
+            flex:1;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            background-color: #f4f4f4;
+            padding: 20px;
+            width: 200px;
+            box-shadow: 2px 0px 5px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar .sub-sidebar{
+            background-color: #ddd;
+            padding: 14px;
+            margin-top: 20px;
+            flex: 1;
+        }
+
+        .content{
+            flex: 3;
+            padding: 20px;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            overflow: auto; 
+        }
+
+        .content .grid{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .content .grid .grid-item {
+            background-color: #eaeaea;
+            padding: 20px;
+            flex: 1 1 calc(33.33%-10px);
+            box-sizing: border-box;
+        }
+
+        .ad-sidebar{
+            background-color: #eaeaea;
+            padding: 20px;
+            width: 150px;
+            box-shadow: -2px 0px 5px rgba(0,0,0,0.2);
+        }
+        footer{
+            margin-top: auto;
+
+        }
+
+        @media (max-width:768px) {
+            .main {
+                flex-direction: column;
+            }
+
+            .sidebar , .ad-sidebar {
+                width: 100%;
+                box-shadow: none;
+            }
+
+            .content .grid .grid-item{
+                flex: 1 1 calc(50%-10px);;
+
+            }
+
+            @media(max-width:480px){
+                .content .grid .grid-item {
+                    flex: 1 1 100%;
+                }
+            }
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-nav">
+                <div class="logo">
+                    <img src="./logo.jpg" alt="logo Image">
+                </div>
+                <nav>
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Services</a>
+                    <a href="#">Contact</a>
+                </nav>
+            </div>
+        </header>
+        <div class="main">
+            <div class="sidebar">
+                <h2>Sidebar</h2>
+                <p>Sidebar content goes here</p>
+                <div class="sub-sidebar">
+                    <h3>Sub Sidebar</h3>
+                    <p>Sub sidebar content</p>
+                </div>
+            </div>
+            <div class="content">
+                <h2>Main Contetnt</h2>
+                <p>Main Content goes here</p>
+                <p>Additional content can be placed here</p>
+                <div class="grid">
+                    <div class="grid-item">Grid Item 1</div>
+                    <div class="grid-item">Grid Item 2</div>
+                    <div class="grid-item">Grid Item 3</div>
+                    <div class="grid-item">Grid Item 4</div>
+                    <div class="grid-item">Grid Item 5</div>
+                    <div class="grid-item">Grid Item 6</div>
+                </div>
+            </div>
+            <div class="ad-sidebar">
+                <h2>Advertisements</h2>
+                <p>Ad content goes here</p>
+            </div>
+        </div>
+        <footer>
+            <p>Footer</p>
+        </footer>
+    </div>
+</body>
+</html>
