@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Tab</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h2>Responsive Tab Example</h2>
+
+    <div class="tab">
+        <button id="defaultOpen" class="tablinks" onclick="openTab(event,'Home')">Home</button>
+        <button class="tablinks" onclick="openTab(event,'News')">News</button>
+        <button class="tablinks" onclick="openTab(event,'Contact')">Contact</button>
+        <button class="tablinks" onclick="openTab(event,'About')">About</button>
+        <button class="tablinks" onclick="openTab(event,'Touch')">Touch</button>
+    </div>
+
+    <div id="Home" class="tabcontent">
+        <h3>Home</h3>
+        <p>Home is where the heart is ...</p>
+    </div>
+
+    <div id="News" class="tabcontent" >
+        <h3>News</h3>
+        <p>News section will be here</p>
+    </div>
+
+    <div id="Contact" class="tabcontent">
+        <h3>Contact</h3>
+        <p>Get in touch or swing by for a cup of coffee</p>
+    </div>
+
+    <div id="About" class="tabcontent">
+        <h3>Abou</h3>
+        <p>Who we are and what we do</p>
+    </div>
+
+    <div id="Touch" class="tabcontent">
+        <h3>Touch</h3>
+        <p>Touch me to hire us</p>
+    </div>
+
+    <script>
+        function openTab(evt,tabName) {
+            let i , tabcontent , tablinks;
+            tabcontent =document.getElementsByClassName("tabcontent");
+            for(i =0 ;i <tabcontent.length;i++){
+                tabcontent[i].style.display = "none";
+            }
+
+            tablinks = document.getElementsByClassName("tablinks");
+            for(i = 0;i<tablinks.length;i++){
+                tablinks[i].className = tablinks[i].className.replace("active","");
+            }
+
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += "active";
+        }
+
+        document.getElementById("defaultOpen").click();
+    </script>
+</body>
+</html>
