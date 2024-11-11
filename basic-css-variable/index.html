@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic CSS Variable</title>
+    <style>
+        :root {
+            --primary-color : #4caf50;
+            --secondary-color :#f1f1f1;
+            --font-size: 24px;
+        }
+
+        .container{
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 20px;
+            font-size: var(--font-size);
+        }
+
+        .container p {
+            background-color: var(--secondary-color);
+            color: #333;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Basic CSS Variable Example</h1>
+    <div class="container">
+        <p>This is a paragraph inside a container</p>
+    </div>
+</body>
+</html>
